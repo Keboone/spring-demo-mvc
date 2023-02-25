@@ -31,6 +31,12 @@ public class CustomerController
 		// syso do logu w konsoli
 		System.out.println("Last name: |" + theCustomer.getLastName() + "|");
 		
+		
+		// !!!WAŻNY LOG DO ODCZYTANIA BŁĘDU W KONSOLI I DOBRANIU 
+		// NP ODPOWIEDNIEJ WIADOMOSCI DO BŁĘDU
+		// potem wiadomosciami z pliku mozna nadpisac inne defaultowe wiadomosci bledow
+		System.out.println("Binding result: " + theBindingResult);
+		
 		if(theBindingResult.hasErrors())
 		{
 			return "customer-form";
