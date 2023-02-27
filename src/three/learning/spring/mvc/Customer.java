@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import three.learning.spring.mvc.validation.CourseCode;
+
 public class Customer 
 {
 	// add class attributes
@@ -24,7 +26,6 @@ public class Customer
 	private String lastName;
 	
 	
-	
 	// tutaj nie dajemy int tylko Integer, jeżeli chcemy zwalidować NotNull, 
 	// bo gdy nic nie wpiszemy w pole wyskoczy nam wyjątek, a nie nasz error message
 	// (trzeba to też zmienić przy getterzei setterze)
@@ -38,6 +39,17 @@ public class Customer
 	@NotNull(message="is required!")
 //	@Size(min=6, message="is required!")
 	private String postalCode;
+	
+	
+	// CUSTOM ANNOTATION VALIDATION
+	
+	
+	
+//	@NotNull(message="is required!")
+//	@Pattern(regexp="^LUV\\w+$", message="must start with LUV")
+	@CourseCode(value={"LUV", "TOPS"}, message="must start with LUV or TOPS")
+	private String courseCode;
+	
 	
 	
 	
@@ -64,6 +76,12 @@ public class Customer
 	}
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+	public String getCourseCode() {
+		return courseCode;
+	}
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 	
 	

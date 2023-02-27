@@ -33,13 +33,18 @@
 			
 			<br><br>
 			
-			Free pasess: <form:input path="freePasses" />
+			Free pasess (*): <form:input path="freePasses" />
 			<form:errors path="freePasses" cssClass="error" />
 			
 			<br><br>
 			
-			Postal code: <form:input path="postalCode" placeholder="eg. 00-000" />
+			Postal code (*): <form:input path="postalCode" placeholder="eg. 00-000" />
 			<form:errors path="postalCode" cssClass="error" />
+			
+			<br><br>
+			
+			Course code: <form:input path="courseCode" />
+			<form:errors path="courseCode" cssClass="error" />
 			
 			<br><br>
 			
